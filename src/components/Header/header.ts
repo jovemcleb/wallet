@@ -31,6 +31,11 @@ export const Header = styled('header', {
     fontSize: '1rem',
     fontWeight: 'bold',
     height: '2.5rem',
+    transition: 'filter 0.1s',
     width: '10rem',
+
+    '&:hover': {
+      filter: 'brightness(0.9)',
+    },
   },
 });

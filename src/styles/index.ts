@@ -15,6 +15,7 @@ export const {
       gray300: '#969CB2',
       gray700: '#363F5F',
       white: '#FFFFFF',
+      purple300: '#6933FF',
       purple500: '#5429CC',
       green: '#33CC95',
       red: '#E52E4D',
@@ -23,9 +24,9 @@ export const {
   media: {
     mobile: '(max-width: 376px)',
     largeMobile: '(max-width: 500px)',
-    tablet: '(max-width: 820px)',
+    tablet: '(max-width: 720px)',
     laptopTab: '(max-width: 975px)',
-    laptop: '(max-width: 1270px)',
+    laptop: '(max-width: 1080px)',
     largeLaptop: '(max-width: 1440px)',
   },
 });

@@ -1,14 +1,18 @@
 import { styled } from '../../styles/index';
 
-export const Header = styled('header', {
-  alignItems: 'flex-start',
+export const HeaderContainer = styled('header', {
   backgroundColor: '$purple500',
-  display: 'flex',
-  justifyContent: 'space-between',
-  height: '12.5rem',
-  padding: '2rem 15rem',
 
-  div: {
+  '.content': {
+    display: 'flex',
+    justifyContent: 'space-between',
+    height: '12.5rem',
+    margin: '0 auto',
+    maxWidth: '1120px',
+    padding: '2rem 15rem',
+  },
+
+  '.logo': {
     display: 'flex',
     gap: '0.5rem',
 

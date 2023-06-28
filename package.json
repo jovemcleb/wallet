@@ -11,8 +11,11 @@
   },
   "dependencies": {
     "@stitches/react": "^1.2.8",
+    "axios": "^1.4.0",
+    "miragejs": "^0.1.47",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-modal": "^3.16.1"
   },
   "devDependencies": {
     "@types/react": "^18.0.37",

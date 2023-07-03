@@ -5,6 +5,7 @@ import { AppContainer } from './styles/app';
 
 import { Header } from './components/Header/header';
 import { Dashboard } from './components/DashBoard/dashboard';
+import { NewTransactionModal } from './components/NewTransactionModal/newTransactionModal';
 
 Modal.setAppElement('#root');
 
@@ -16,13 +17,10 @@ function App() {
 
   return (
     <AppContainer>
-      <Modal
+      <NewTransactionModal
         isOpen={newTransactionModal}
-        onRequestClose={() => handleCloseNewTransactionModal()}
-      >
-        <h2>Cadastrar transação</h2>
-      </Modal>
-
+        onRequestClose={handleCloseNewTransactionModal}
+      />
       <Header onOpenNewTransactionModal={handleOpenNewTransactionModal} />
       <Dashboard />
     </AppContainer>

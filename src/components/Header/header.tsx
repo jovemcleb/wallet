@@ -1,6 +1,12 @@
+import { useState } from 'react';
 import { HeaderContainer } from './headerStyle';
 import logo from '../../assets/wallet-logo.svg';
-export function Header() {
+
+interface HeaderProps {
+  onOpenNewTransactionModal: () => void;
+}
+
+export function Header({ onOpenNewTransactionModal }: HeaderProps) {
   return (
     <HeaderContainer>
       <div className="content">
@@ -12,7 +18,9 @@ export function Header() {
           <h1>Wallet</h1>
         </div>
 
-        <button>Nova transação</button>
+        <button type="button" onClick={() => onOpenNewTransactionModal()}>
+          Nova transação
+        </button>
       </div>
     </HeaderContainer>
   );

@@ -39,4 +39,38 @@ export const globalStyles = globalCss({
     opacity: 0.6,
     cursor: 'not-allowed',
   },
+
+  '.react-modal-overlay': {
+    backgroundColor: 'rgba(0, 0, 0, 0.5)',
+    position: 'fixed',
+    top: 0,
+    bottom: 0,
+    right: 0,
+    left: 0,
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+
+  '.react-modal-content': {
+    width: '100%',
+    maxWidth: '576px',
+    backgroundColor: '$gray100',
+    padding: '3rem',
+    position: 'relative',
+    borderRadius: '0.25rem',
+  },
+
+  '.react-modal-close': {
+    position: 'absolute',
+    right: '1.5rem',
+    top: '1.5rem',
+    border: '0',
+    backgroundColor: 'transparent',
+    transition: 'filter 0.2s',
+
+    '&:hover': {
+      filter: 'brightness(0.8)',
+    },
+  },
 });

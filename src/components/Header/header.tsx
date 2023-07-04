@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { HeaderContainer } from './headerStyle';
 import logo from '../../assets/wallet-logo.svg';
 

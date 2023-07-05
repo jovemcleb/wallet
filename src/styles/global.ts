@@ -54,7 +54,7 @@ export const globalStyles = globalCss({
 
   '.react-modal-content': {
     width: '100%',
-    maxWidth: '576px',
+    maxWidth: '26rem',
     backgroundColor: '$gray100',
     padding: '3rem',
     position: 'relative',

@@ -8,7 +8,8 @@ export const FormContainer = styled('form', {
   },
 
   input: {
-    width: '91.3%',
+    width: '100%',
+    maxWidth: '23rem',
     padding: '0 1.5rem',
     height: '4rem',
     borderRadius: '0.25rem',
@@ -40,6 +41,39 @@ export const FormContainer = styled('form', {
 
     '&:hover': {
       filter: 'brightness(0.9)',
+    },
+  },
+});
+
+export const TransactionTypeContainer = styled('div', {
+  margin: '1rem 0',
+  display: 'grid',
+  gridTemplateColumns: '1fr 1fr',
+  gap: ' 0.5rem',
+
+  button: {
+    height: '4rem',
+    border: '1px solid #d7d7d7',
+    borderRadius: '0.25rem',
+    backgroundColor: 'transparent',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    gap: '0.4rem',
+    transition: 'border-color 0.2s',
+
+    img: {
+      width: '20px',
+      height: '20px',
+    },
+
+    span: {
+      fontSize: '1rem',
+      color: '$gray700',
+    },
+
+    '&:hover': {
+      borderColor: '#aaa',
     },
   },
 });

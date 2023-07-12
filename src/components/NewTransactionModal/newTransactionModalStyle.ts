@@ -50,30 +50,42 @@ export const TransactionTypeContainer = styled('div', {
   display: 'grid',
   gridTemplateColumns: '1fr 1fr',
   gap: ' 0.5rem',
+});
 
-  button: {
-    height: '4rem',
-    border: '1px solid #d7d7d7',
-    borderRadius: '0.25rem',
-    backgroundColor: 'transparent',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    gap: '0.4rem',
-    transition: 'border-color 0.2s',
-
-    img: {
-      width: '20px',
-      height: '20px',
+export const ButtonCategory = styled('button', {
+  variants: {
+    isActive: {
+      red: {
+        backgroundColor: '#f4abb7',
+      },
+      green: {
+        backgroundColor: '#a0daba',
+      },
+      false: {},
     },
+  },
 
-    span: {
-      fontSize: '1rem',
-      color: '$gray700',
-    },
+  height: '4rem',
+  border: '1px solid #d7d7d7',
+  borderRadius: '0.25rem',
+  backgroundColor: 'transparent',
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+  gap: '0.4rem',
+  transition: 'border-color 0.2s',
 
-    '&:hover': {
-      borderColor: '#aaa',
-    },
+  img: {
+    width: '20px',
+    height: '20px',
+  },
+
+  span: {
+    fontSize: '1rem',
+    color: '$gray700',
+  },
+
+  '&:hover': {
+    borderColor: '#aaa',
   },
 });

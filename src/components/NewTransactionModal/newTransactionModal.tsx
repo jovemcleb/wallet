@@ -1,5 +1,7 @@
+import { useState } from 'react';
 import Modal from 'react-modal';
 import {
+  ButtonCategory,
   FormContainer,
   TransactionTypeContainer,
 } from './newTransactionModalStyle';
@@ -17,6 +19,10 @@ export function NewTransactionModal({
   isOpen,
   onRequestClose,
 }: NewTransactionModalProps) {
+  const [typeTransaction, setTypeTransaction] = useState('entrada');
+
+  const handleCreateNewTransaction = () => {};
+
   return (
     <Modal
       isOpen={isOpen}
@@ -26,7 +32,10 @@ export function NewTransactionModal({
     >
       <button
         type="button"
-        onClick={() => onRequestClose()}
+        onClick={() => {
+          onRequestClose();
+          setTypeTransaction('none');
+        }}
         className="react-modal-close"
       >
         <img src={closeIcon} alt="Ícone para fechar" />
@@ -35,16 +44,26 @@ export function NewTransactionModal({
         <h2>Cadastrar transação</h2>
         <input type="text" placeholder="Titulo" />
         <input type="number" placeholder="Valor" />
+
         <TransactionTypeContainer>
-          <button type="button">
+          <ButtonCategory
+            isActive={typeTransaction === 'deposit' ? 'green' : 'false'}
+            type="button"
+            onClick={() => setTypeTransaction('deposit')}
+          >
             <img src={incomeIcon} alt="Ícone de entrada" />
             <span>Entrada</span>
-          </button>
-          <button type="button">
+          </ButtonCategory>
+          <ButtonCategory
+            isActive={typeTransaction === 'withdraw' ? 'red' : 'false'}
+            type="button"
+            onClick={() => setTypeTransaction('withdraw')}
+          >
             <img src={outcomeIcon} alt="Ícone de saída" />
             <span>Saída</span>
-          </button>
+          </ButtonCategory>
         </TransactionTypeContainer>
+
         <input type="text" placeholder="Categoria" />
         <button type="submit">Cadastrar</button>
       </FormContainer>

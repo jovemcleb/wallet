@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { FormEvent, useState } from 'react';
 import Modal from 'react-modal';
 import {
   ButtonCategory,
@@ -9,6 +9,7 @@ import {
 import closeIcon from '../../assets/close.svg';
 import incomeIcon from '../../assets/Entradas.svg';
 import outcomeIcon from '../../assets/Saídas.svg';
+import { api } from '../../services/api';
 
 interface NewTransactionModalProps {
   isOpen: boolean;
@@ -19,9 +20,28 @@ export function NewTransactionModal({
   isOpen,
   onRequestClose,
 }: NewTransactionModalProps) {
+  const [title, setTitle] = useState('');
+  const [value, setValue] = useState(0);
   const [typeTransaction, setTypeTransaction] = useState('entrada');
+  const [category, setCategory] = useState('');
 
-  const handleCreateNewTransaction = () => {};
+  const handleCreateNewTransaction = (event: FormEvent) => {
+    event.preventDefault();
+    const dataTransaction = {
+      title,
+      value,
+      typeTransaction,
+      category,
+    };
+
+    api.post('/transactions', dataTransaction);
+
+    onRequestClose();
+    setTitle('');
+    setValue(0);
+    setTypeTransaction('none');
+    setCategory('');
+  };
 
   return (
     <Modal
@@ -35,15 +55,28 @@ export function NewTransactionModal({
         onClick={() => {
           onRequestClose();
           setTypeTransaction('none');
+          setTitle('');
+          setValue(0);
+          setCategory('');
         }}
         className="react-modal-close"
       >
         <img src={closeIcon} alt="Ícone para fechar" />
       </button>
-      <FormContainer>
+      <FormContainer onSubmit={handleCreateNewTransaction}>
         <h2>Cadastrar transação</h2>
-        <input type="text" placeholder="Titulo" />
-        <input type="number" placeholder="Valor" />
+        <input
+          type="text"
+          placeholder="Titulo"
+          value={title}
+          onChange={({ target }) => setTitle(target.value)}
+        />
+        <input
+          type="number"
+          placeholder="Valor"
+          value={value}
+          onChange={({ target }) => setValue(Number(target.value))}
+        />
 
         <TransactionTypeContainer>
           <ButtonCategory
@@ -64,7 +97,12 @@ export function NewTransactionModal({
           </ButtonCategory>
         </TransactionTypeContainer>
 
-        <input type="text" placeholder="Categoria" />
+        <input
+          type="text"
+          placeholder="Categoria"
+          value={category}
+          onChange={({ target }) => setCategory(target.value)}
+        />
         <button type="submit">Cadastrar</button>
       </FormContainer>
     </Modal>

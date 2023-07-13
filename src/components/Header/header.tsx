@@ -1,9 +1,9 @@
 import { HeaderContainer } from './headerStyle';
 import logo from '../../assets/wallet-logo.svg';
 
-interface HeaderProps {
+type HeaderProps = {
   onOpenNewTransactionModal: () => void;
-}
+};
 
 export function Header({ onOpenNewTransactionModal }: HeaderProps) {
   return (

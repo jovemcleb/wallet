@@ -11,10 +11,10 @@ import incomeIcon from '../../assets/Entradas.svg';
 import outcomeIcon from '../../assets/Saídas.svg';
 import { api } from '../../services/api';
 
-interface NewTransactionModalProps {
+type NewTransactionModalProps = {
   isOpen: boolean;
   onRequestClose: () => void;
-}
+};
 
 export function NewTransactionModal({
   isOpen,

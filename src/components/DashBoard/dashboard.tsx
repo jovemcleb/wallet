@@ -4,11 +4,9 @@ import { DashBoardContainer } from './dashboardStyle';
 
 export function Dashboard() {
   return (
-    <>
-      <DashBoardContainer>
-        <Summary />
-        <TransactionsTable />
-      </DashBoardContainer>
-    </>
+    <DashBoardContainer>
+      <Summary />
+      <TransactionsTable />
+    </DashBoardContainer>
   );
 }

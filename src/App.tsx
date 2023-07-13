@@ -6,6 +6,7 @@ import { AppContainer } from './styles/app';
 import { Header } from './components/Header/header';
 import { Dashboard } from './components/DashBoard/dashboard';
 import { NewTransactionModal } from './components/NewTransactionModal/newTransactionModal';
+import { TransactionsProvider } from './transactionsContext';
 
 Modal.setAppElement('#root');
 
@@ -16,14 +17,16 @@ function App() {
   const handleOpenNewTransactionModal = () => setNewTransactionModal(true);
 
   return (
-    <AppContainer>
-      <NewTransactionModal
-        isOpen={newTransactionModal}
-        onRequestClose={handleCloseNewTransactionModal}
-      />
-      <Header onOpenNewTransactionModal={handleOpenNewTransactionModal} />
-      <Dashboard />
-    </AppContainer>
+    <TransactionsProvider>
+      <AppContainer>
+        <NewTransactionModal
+          isOpen={newTransactionModal}
+          onRequestClose={handleCloseNewTransactionModal}
+        />
+        <Header onOpenNewTransactionModal={handleOpenNewTransactionModal} />
+        <Dashboard />
+      </AppContainer>
+    </TransactionsProvider>
   );
 }
 

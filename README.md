@@ -34,7 +34,7 @@ Esse projeto consiste em uma page simples de uma carteira de controle de gastos,
 git clone git@github.com:jovemcleb/wallet.git
 ```
 
-1. Em seguida, entre no diretório e instale as dependências do projeto com:
+2. Em seguida, entre no diretório e instale as dependências do projeto com:
 
 ```bash
 npm install
@@ -42,16 +42,16 @@ OU
 yarn install
 ```
 
-1. Rode o comando `npm run dev`:
+3. Rode o comando `npm run dev`:
 
 ```bash
 npm run dev
 ```
 
-1. O seu terminal irá retorna algo similar a imagem abaixo, basta segurar o Ctrl do seu teclado e clicar em cima de Local: `http://127.0.0.1:5173/`
+4. O seu terminal irá retorna algo similar a imagem abaixo, basta segurar o Ctrl do seu teclado e clicar em cima de Local: `http://127.0.0.1:5173/`
 
 ![https://cdn.discordapp.com/attachments/989139685865562162/1048970627714924734/image.png](https://cdn.discordapp.com/attachments/989139685865562162/1048970627714924734/image.png)
 
-1. Agora é só aproveitar o projeto:
+5. Agora é só aproveitar o projeto:
 
 ![https://cdn.discordapp.com/attachments/989139685865562162/1129102926913220648/image.png](https://cdn.discordapp.com/attachments/989139685865562162/1129102926913220648/image.png)

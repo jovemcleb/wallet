@@ -6,8 +6,7 @@ import saidas from '../../assets/Saídas.svg';
 import total from '../../assets/Total.svg';
 
 export function Summary() {
-  const transactions = useContext(TransactionsContext);
-  console.log(transactions);
+  const { transactions } = useContext(TransactionsContext);
 
   return (
     <SummaryContainer>

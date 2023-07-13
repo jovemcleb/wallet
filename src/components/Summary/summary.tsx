@@ -1,12 +1,11 @@
-import { useContext } from 'react';
-import { TransactionsContext } from '../../transactionsContext';
+import { useTransactions } from '../../hooks/useTransactions';
 import { Card, SummaryContainer } from './summaryStyle';
 import entradas from '../../assets/Entradas.svg';
 import saidas from '../../assets/Saídas.svg';
 import totalIcon from '../../assets/Total.svg';
 
 export function Summary() {
-  const { transactions } = useContext(TransactionsContext);
+  const { transactions } = useTransactions();
 
   // const totalDeposit = transactions.reduce((acc, { type, amount }) => {
   //   if (type === 'deposit') {

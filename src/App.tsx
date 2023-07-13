@@ -6,7 +6,7 @@ import { AppContainer } from './styles/app';
 import { Header } from './components/Header/header';
 import { Dashboard } from './components/DashBoard/dashboard';
 import { NewTransactionModal } from './components/NewTransactionModal/newTransactionModal';
-import { TransactionsProvider } from './transactionsContext';
+import { TransactionsProvider } from './hooks/useTransactions';
 
 Modal.setAppElement('#root');
 

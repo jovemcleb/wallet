@@ -12,11 +12,11 @@ Email: lima.carodoso.caleb@gmail.com
 
 Celular: 91 980119059
 
-## \***\*📝\*\*** Descrição
+## 📝 Descrição
 
 Esse projeto consiste em uma page simples de uma carteira de controle de gastos, onde é possível cadastrar transações, tanto de entrada como de saída, e ainda ter um balanço total no painel de gastos.
 
-## \***\*🔧 Tecnologias utilizadas\*\***
+## 🔧 Tecnologias utilizadas
 
 - TypeScript
 - React JS
@@ -26,7 +26,7 @@ Esse projeto consiste em uma page simples de uma carteira de controle de gastos,
 - MirageJS
 - Vite
 
-## \***\*🚀 Rodando o projeto\*\***
+## 🚀 Rodando o projeto
 
 1. Clone o projeto em sua máquina
 

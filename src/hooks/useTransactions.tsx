@@ -2,13 +2,14 @@ import {
   ReactNode,
   createContext,
   useContext,
-  useEffect,
+  // useEffect,
   useState,
 } from 'react';
-import { api } from '../services/api';
+import { v4 as uuid } from 'uuid';
+// import { api } from '../services/api';
 
 type Transaction = {
-  id: number;
+  id: string;
   title: string;
   amount: number;
   type: string;
@@ -39,22 +40,46 @@ const TransactionsContext = createContext<TransactionsContextData>(
 );
 
 export function TransactionsProvider({ children }: TransactionsProviderProps) {
-  const [transactions, setTransactions] = useState<Transaction[]>([]);
+  const [transactions, setTransactions] = useState<Transaction[]>([
+    {
+      id: uuid(),
+      title: 'Desenvolvimento de site',
+      type: 'deposit',
+      category: 'Development',
+      amount: 6000,
+      createdAt: String(new Date('2023-07-13 09:00:00')),
+    },
+    {
+      id: uuid(),
+      title: 'Aluguel',
+      type: 'withdraw',
+      category: 'Casa',
+      amount: 500,
+      createdAt: String(new Date('2023-07-16 09:00:00')),
+    },
+  ]);
 
-  useEffect(() => {
-    api
-      .get('/transactions')
-      .then((response) => setTransactions(response.data.transactions));
-  }, []);
+  // useEffect(() => {
+  //   api
+  //     .get('/transactions')
+  //     .then((response) => setTransactions(response.data.transactions));
+  // }, []);
 
   const createTransaction = async (transactionInput: TransactionInput) => {
-    const response = await api.post('/transactions', {
-      ...transactionInput,
-      createdAt: new Date(),
-    });
-    const { transaction } = response.data;
+    // const response = await api.post('/transactions', {
+    //   ...transactionInput,
+    //   createdAt: new Date(),
+    // });
+    // const { transaction } = response.data;
 
-    setTransactions([...transactions, transaction]);
+    setTransactions([
+      ...transactions,
+      {
+        id: uuid(),
+        ...transactionInput,
+        createdAt: String(new Date()),
+      },
+    ]);
   };
 
   return (

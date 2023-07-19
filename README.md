@@ -12,6 +12,8 @@ Email: lima.carodoso.caleb@gmail.com
 
 Celular: 91 980119059
 
+🚀Deploy: https://wallet-puce.vercel.app
+
 ## 📝 Descrição
 
 Esse projeto consiste em uma page simples de uma carteira de controle de gastos, onde é possível cadastrar transações, tanto de entrada como de saída, e ainda ter um balanço total no painel de gastos.

@@ -20,6 +20,10 @@ export const TransactionsTableContainer = styled('section', {
       background: '$white',
       color: '$gray300',
 
+      img: {
+        cursor: 'pointer',
+      },
+
       '&:first-child': {
         color: '$gray700',
       },

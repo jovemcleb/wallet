@@ -1,8 +1,10 @@
 import { TransactionsTableContainer } from './transactionsTableStyle';
 import { useTransactions } from '../../hooks/useTransactions';
+import deleteIcon from '../../assets/excluir.svg';
+import editIcon from '../../assets/editar.svg';
 
 export function TransactionsTable() {
-  const { transactions } = useTransactions();
+  const { transactions, deleteTransaction } = useTransactions();
 
   return (
     <>
@@ -32,6 +34,16 @@ export function TransactionsTable() {
                     {new Intl.DateTimeFormat('pt-BR').format(
                       new Date(createdAt)
                     )}
+                  </td>
+                  <td>
+                    <img
+                      src={deleteIcon}
+                      onClick={() => deleteTransaction(id)}
+                      alt="Ícone de Lixeira"
+                    />
+                  </td>
+                  <td>
+                    <img src={editIcon} alt="Ícone de Edição" />
                   </td>
                 </tr>
               )

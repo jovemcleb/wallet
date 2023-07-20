@@ -35,14 +35,14 @@ export function TransactionsTable() {
                       new Date(createdAt)
                     )}
                   </td>
-                  <td>
+                  <td className='delete'>
                     <img
                       src={deleteIcon}
                       onClick={() => deleteTransaction(id)}
                       alt="Ícone de Lixeira"
                     />
                   </td>
-                  <td>
+                  <td className='edit'>
                     <img src={editIcon} alt="Ícone de Edição" />
                   </td>
                 </tr>

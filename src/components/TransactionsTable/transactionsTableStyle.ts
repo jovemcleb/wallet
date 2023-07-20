@@ -34,5 +34,8 @@ export const TransactionsTableContainer = styled('section', {
         color: '$red',
       },
     },
+    '.delete,.edit': {
+      padding: '1rem',
+    },
   },
 });

@@ -68,7 +68,7 @@ export function Summary() {
           {new Intl.NumberFormat('pt-BR', {
             style: 'currency',
             currency: 'BRL',
-          }).format(total)}
+          }).format(total < 0 ? total * -1 : total)}
         </strong>
       </Card>
     </SummaryContainer>

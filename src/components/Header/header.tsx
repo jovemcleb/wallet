@@ -1,11 +1,15 @@
 import { HeaderContainer } from './headerStyle';
 import logo from '../../assets/wallet-logo.svg';
+import { useContextModal } from '../../hooks/useContextModal';
 
-type HeaderProps = {
-  onOpenNewTransactionModal: () => void;
-};
+// type HeaderProps = {
+//   onOpenNewTransactionModal: () => void;
+// };
 
-export function Header({ onOpenNewTransactionModal }: HeaderProps) {
+export function Header() {
+  const { handleOpenNewTransactionModal: onOpenNewTransactionModal } =
+    useContextModal();
+
   return (
     <HeaderContainer>
       <div className="content">

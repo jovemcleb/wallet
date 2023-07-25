@@ -10,17 +10,19 @@ import { useTransactions } from '../../hooks/useTransactions';
 import closeIcon from '../../assets/close.svg';
 import incomeIcon from '../../assets/Entradas.svg';
 import outcomeIcon from '../../assets/Saídas.svg';
+import { useContextModal } from '../../hooks/useContextModal';
 
-type NewTransactionModalProps = {
-  isOpen: boolean;
-  onRequestClose: () => void;
-};
+// type NewTransactionModalProps = {
+//   isOpen: boolean;
+//   onRequestClose: () => void;
+// };
 
-export function NewTransactionModal({
-  isOpen,
-  onRequestClose,
-}: NewTransactionModalProps) {
+export function NewTransactionModal() {
   const { createTransaction } = useTransactions();
+  const {
+    newTransactionModal: isOpen,
+    handleCloseNewTransactionModal: onRequestClose,
+  } = useContextModal();
 
   const [title, setTitle] = useState('');
   const [amount, setAmount] = useState(0);

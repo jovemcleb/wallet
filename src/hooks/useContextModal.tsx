@@ -5,8 +5,11 @@ type ModalProviderProps = {
 };
 type ModalContextData = {
   newTransactionModal: boolean;
+  editTransactionModal: boolean;
   handleCloseNewTransactionModal: () => void;
   handleOpenNewTransactionModal: () => void;
+  handleOpenEditTransactionModal: () => void;
+  handleCloseEditTransactionModal: () => void;
 };
 
 export const ModalContext = createContext<ModalContextData>(
@@ -15,9 +18,13 @@ export const ModalContext = createContext<ModalContextData>(
 
 export function ModalProvider({ children }: ModalProviderProps) {
   const [newTransactionModal, setNewTransactionModal] = useState(false);
+  const [editTransactionModal, setEditTransactionModal] = useState(false);
 
   const handleCloseNewTransactionModal = () => setNewTransactionModal(false);
   const handleOpenNewTransactionModal = () => setNewTransactionModal(true);
+
+  const handleOpenEditTransactionModal = () => setEditTransactionModal(true);
+  const handleCloseEditTransactionModal = () => setEditTransactionModal(false);
 
   return (
     <ModalContext.Provider
@@ -25,6 +32,9 @@ export function ModalProvider({ children }: ModalProviderProps) {
         newTransactionModal,
         handleCloseNewTransactionModal,
         handleOpenNewTransactionModal,
+        editTransactionModal,
+        handleOpenEditTransactionModal,
+        handleCloseEditTransactionModal,
       }}
     >
       {children}

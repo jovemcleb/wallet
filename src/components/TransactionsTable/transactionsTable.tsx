@@ -1,10 +1,15 @@
-import { TransactionsTableContainer } from './transactionsTableStyle';
 import { useTransactions } from '../../hooks/useTransactions';
+import { useContextModal } from '../../hooks/useContextModal';
+
+import { TransactionsTableContainer } from './transactionsTableStyle';
+
 import deleteIcon from '../../assets/excluir.svg';
 import editIcon from '../../assets/editar.svg';
 
 export function TransactionsTable() {
   const { transactions, deleteTransaction } = useTransactions();
+  const { handleOpenEditTransactionModal: onOpenEditTransaction } =
+    useContextModal();
 
   return (
     <>
@@ -35,15 +40,19 @@ export function TransactionsTable() {
                       new Date(createdAt)
                     )}
                   </td>
-                  <td className='delete'>
+                  <td className="delete">
                     <img
                       src={deleteIcon}
                       onClick={() => deleteTransaction(id)}
                       alt="Ícone de Lixeira"
                     />
                   </td>
-                  <td className='edit'>
-                    <img src={editIcon} alt="Ícone de Edição" />
+                  <td className="edit">
+                    <img
+                      src={editIcon}
+                      alt="Ícone de Edição"
+                      onClick={() => onOpenEditTransaction()}
+                    />
                   </td>
                 </tr>
               )

@@ -18,7 +18,7 @@ export const FormContainer = styled('form', {
     fontSize: '1rem',
     fontWeight: 400,
 
-    '&::placeholder': {
+    '&:placeholder': {
       color: '$gray300',
     },
 

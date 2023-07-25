@@ -7,6 +7,7 @@ import { Dashboard } from './components/DashBoard/dashboard';
 import { NewTransactionModal } from './components/NewTransactionModal/newTransactionModal';
 import { TransactionsProvider } from './hooks/useTransactions';
 import { ModalProvider } from './hooks/useContextModal';
+import { EditTransactionModal } from './components/EditTransactionModal/editTransactionModal';
 
 Modal.setAppElement('#root');
 
@@ -16,11 +17,7 @@ function App() {
       <AppContainer>
         <ModalProvider>
           <NewTransactionModal />
-          {/* <Modal
-            isOpen={editTransactionModal}
-            overlayClassName="react-modal-overlay"
-            className="react-modal-content"
-          ></Modal> */}
+          <EditTransactionModal />
           <Header />
           <Dashboard />
         </ModalProvider>

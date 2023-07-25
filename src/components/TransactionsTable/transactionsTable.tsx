@@ -7,7 +7,8 @@ import deleteIcon from '../../assets/excluir.svg';
 import editIcon from '../../assets/editar.svg';
 
 export function TransactionsTable() {
-  const { transactions, deleteTransaction } = useTransactions();
+  const { transactions, deleteTransaction, findTransactionToEdit } =
+    useTransactions();
   const { handleOpenEditTransactionModal: onOpenEditTransaction } =
     useContextModal();
 
@@ -51,7 +52,10 @@ export function TransactionsTable() {
                     <img
                       src={editIcon}
                       alt="Ícone de Edição"
-                      onClick={() => onOpenEditTransaction()}
+                      onClick={() => {
+                        onOpenEditTransaction();
+                        findTransactionToEdit(id);
+                      }}
                     />
                   </td>
                 </tr>

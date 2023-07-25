@@ -21,10 +21,11 @@ type TransactionsProviderProps = {
   children: ReactNode;
 };
 
-// type TransactionInput = {
+// type TransactionInputUpdate = {
+//   id: string;
 //   title: string;
-//   value: number;
-//   typeTransaction: string;
+//   amount: number;
+//   type: string;
 //   category: string;
 // };
 
@@ -32,8 +33,11 @@ type TransactionInput = Omit<Transaction, 'id' | 'createdAt'>;
 
 type TransactionsContextData = {
   transactions: Transaction[];
+  currentTransaction: Transaction | undefined;
   createTransaction: (transaction: TransactionInput) => Promise<void>;
   deleteTransaction: (id: string) => Promise<void>;
+  findTransactionToEdit: (id: string) => Promise<void>;
+  updateTransaction: (transaction: TransactionInput) => Promise<void>;
 };
 
 const TransactionsContext = createContext<TransactionsContextData>(
@@ -59,6 +63,9 @@ export function TransactionsProvider({ children }: TransactionsProviderProps) {
       createdAt: String(new Date('2023-07-16 09:00:00')),
     },
   ]);
+  const [currentTransaction, setCurrentTransaction] = useState<Transaction>(
+    {} as Transaction
+  );
 
   // useEffect(() => {
   //   api
@@ -88,9 +95,38 @@ export function TransactionsProvider({ children }: TransactionsProviderProps) {
     setTransactions(newTransactions);
   };
 
+  const findTransactionToEdit = async (idInput: string) => {
+    const transaction = transactions.find(({ id }) => id === idInput);
+    setCurrentTransaction(transaction!);
+  };
+
+  const updateTransaction = async (transaction: TransactionInput) => {
+    const updatedTransactions = [...transactions];
+    const transactionIndex = updatedTransactions.findIndex(
+      ({ id }) => id === currentTransaction.id
+    );
+
+    updatedTransactions[transactionIndex] = {
+      ...currentTransaction,
+      title: transaction.title,
+      amount: transaction.amount,
+      category: transaction.category,
+      type: transaction.type,
+    };
+
+    setTransactions(updatedTransactions);
+  };
+
   return (
     <TransactionsContext.Provider
-      value={{ transactions, createTransaction, deleteTransaction }}
+      value={{
+        transactions,
+        createTransaction,
+        deleteTransaction,
+        findTransactionToEdit,
+        currentTransaction,
+        updateTransaction,
+      }}
     >
       {children}
     </TransactionsContext.Provider>

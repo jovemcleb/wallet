@@ -8,7 +8,7 @@ Linkedin: [https://www.linkedin.com/in/caleb-lima/](https://www.linkedin.com/in/
 
 Github: [https://github.com/jovemcleb](https://github.com/jovemcleb)
 
-Email: lima.carodoso.caleb@gmail.com
+Email: lima.cardoso.caleb@gmail.com
 
 Celular: 91 980119059
 

@@ -50,10 +50,6 @@ yarn install
 npm run dev
 ```
 
-4. O seu terminal irá retorna algo similar a imagem abaixo, basta segurar o Ctrl do seu teclado e clicar em cima de Local: `http://127.0.0.1:5173/`
+4. Agora é só aproveitar o projeto:
 
-![https://cdn.discordapp.com/attachments/989139685865562162/1048970627714924734/image.png](https://cdn.discordapp.com/attachments/989139685865562162/1048970627714924734/image.png)
-
-5. Agora é só aproveitar o projeto:
-
-![https://cdn.discordapp.com/attachments/989139685865562162/1129102926913220648/image.png](https://cdn.discordapp.com/attachments/989139685865562162/1129102926913220648/image.png)
+![https://cdn.discordapp.com/attachments/989139685865562162/1230168462182187009/image.png?ex=663256a8&is=661fe1a8&hm=680e2a62681bc04946d33051b809266d4ca7458599a24522dc361d1126d80a4d&](https://cdn.discordapp.com/attachments/989139685865562162/1230168462182187009/image.png?ex=663256a8&is=661fe1a8&hm=680e2a62681bc04946d33051b809266d4ca7458599a24522dc361d1126d80a4d&)
